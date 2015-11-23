@@ -1,0 +1,34 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<h1><%= link_to 'All Questions', controller: 'questions' %></h1>
+
+<% @questions.each do |question| %>
+<div>
+  <div class="question-question">
+    <h3><%= question.question %></h3>
+  </div>
+  <div class="question-one">
+  <%= question.one %>
+  </div>
+  <div class="question-two">
+  <%= question.two %>
+  </div>
+  <div class="question-three">
+  <%= question.three %>
+  </div>
+  <div class="question-four">
+  <%= question.four %>
+  </div>
+</div>
+<% end %>
+<br>
+<div class="new-question">
+  <%= link_to 'New Question', new_question_path, {class: 'allquestions-link'} %>
+</div>
