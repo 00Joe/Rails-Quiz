@@ -1,4 +1,27 @@
-<p>
-  <strong>Title:</strong>
-  <%= @question.question %>
-</p>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+<div class = "container">
+
+  <div class = "page-header">
+    <%= @question.question %>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h4>Question</h4>
+      <p><%= @question.one %></p>
+    </li>
+  </ul>
+
+
+
+</div>

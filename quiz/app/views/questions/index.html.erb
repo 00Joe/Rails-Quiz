@@ -7,7 +7,18 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<h1><%= link_to 'All Questions', controller: 'questions' %></h1>
+
+<div class = "container">
+  <div class = "page-header">
+    <center><h1>Quizify</h1></center>
+  </div>
+  <div class = "jumbotron">
+    <center>
+      <h4><%= link_to 'All Questions', controller: 'questions' %></h4>
+      <h4><%= link_to 'New Question', new_question_path, {class: 'allquestions-link'} %></h4>
+    </center>
+  </div>
+</div>
 
 <% @questions.each do |question| %>
 <div>
@@ -30,5 +41,4 @@
 <% end %>
 <br>
 <div class="new-question">
-  <%= link_to 'New Question', new_question_path, {class: 'allquestions-link'} %>
 </div>
