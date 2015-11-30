@@ -1,5 +1,12 @@
 class QuestionsController < ApplicationController
 
+    def home
+      respond_to do |format|
+        format.html
+      end
+    end
+
+
   def index
     @questions = Question.all
   end
