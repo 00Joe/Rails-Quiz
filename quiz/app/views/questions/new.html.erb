@@ -42,7 +42,12 @@
 
     <div class="form-group">
       <%= f.label :answer %>
-      <%= f.text_field :answer, class:'form-control' %>
+      <%= f.text_field :answer, class:'form-control', placeholder: 'One, Two, Three, Four' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Quiz_Number %>
+      <%= f.text_field :Quiz_Num, class:'form-control', placeholder: '1, 2, 3,...' %>
     </div>
 
     <%= f.submit %>
