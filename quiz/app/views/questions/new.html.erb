@@ -1,36 +1,62 @@
-<h1>New Question</h1>
-<%= form_for(@question) do |f| %>
-  <p>
-    <%= f.label :question %><br>
-    <%= f.text_field :question %>
-  </p>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <p>
-    <%= f.label :one %><br>
-    <%= f.text_area :one %>
-  </p>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-  <p>
-    <%= f.label :two %><br>
-    <%= f.text_area :two %>
-  </p>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-  <p>
-    <%= f.label :three %><br>
-    <%= f.text_area :three %>
-  </p>
+<div class = "container">
 
-  <p>
-    <%= f.label :four %><br>
-    <%= f.text_area :four %>
-  </p>
+  <div class = "container">
+    <div class = "page-header">
+      <center><h1>New Question</h1></center>
+      <ul class="nav nav-tabs">
+        <li role="presentation"><%= link_to 'Home', root_path %></li>
+        <li role="presentation"><%= link_to 'All Questions', controller: 'questions' %></li>
+        <li role="presentation"><%= link_to 'New Question', new_question_path, {class: 'allquestions-link'}  %></li>
+      </ul>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :answer %><br>
-    <%= f.text_area :answer %>
-  </p>
+  <%= form_for(@question) do |f| %>
 
-  <p>
+    <div class="form-group">
+      <%= f.label :question %>
+      <%= f.text_field :question, class:'form-control', placeholder: 'question' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :one %>
+      <%= f.text_field :one, class:'form-control', placeholder: 'answer' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :two %>
+      <%= f.text_field :two, class:'form-control', placeholder: 'answer' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :three %>
+      <%= f.text_field :three, class:'form-control', placeholder: 'answer' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :four %>
+      <%= f.text_field :four, class:'form-control', placeholder: 'answer' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :answer %>
+      <%= f.text_field :answer, class:'form-control', placeholder: 'One, Two, Three, Four' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Quiz_Number %>
+      <%= f.text_field :Quiz_Num, class:'form-control', placeholder: '1, 2, 3,...' %>
+    </div>
+
     <%= f.submit %>
-  </p>
-<% end %>
+    <% end %>
+</div>
