@@ -9,8 +9,15 @@
 
 <div class = "container">
 
-  <div class = "page-header">
-    <h1>New Question</h1>
+  <div class = "container">
+    <div class = "page-header">
+      <center><h1>New Question</h1></center>
+      <ul class="nav nav-tabs">
+        <li role="presentation"><%= link_to 'Home', root_path %></li>
+        <li role="presentation"><%= link_to 'All Questions', controller: 'questions' %></li>
+        <li role="presentation"><%= link_to 'New Question', new_question_path, {class: 'allquestions-link'}  %></li>
+      </ul>
+    </div>
   </div>
 
   <%= form_for(@question) do |f| %>
