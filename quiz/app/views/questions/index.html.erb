@@ -1,65 +1,36 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<p id="notice"><%= notice %></p>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<div class="container">
+  <div class="panel panel-default">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>Ans</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<div class = "container">
-  <div class = "page-header">
-    <center><h1>All Questions</h1></center>
-    <ul class="nav nav-tabs">
-      <li role="presentation"><%= link_to 'Home', root_path %></li>
-      <li role="presentation"><%= link_to 'All Questions', controller: 'questions' %></li>
-      <li role="presentation"><%= link_to 'New Question', new_question_path, {class: 'allquestions-link'}  %></li>
-    </ul>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr>
+            <td><%= question.question %></td>
+            <td><%= question.one %></td>
+            <td><%= question.two %></td>
+            <td><%= question.three %></td>
+            <td><%= question.four %></td>
+            <td><%= question.answer %></td>
+            <td>
+              <%= link_to 'Edit', edit_question_path(question) %><br>
+              <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-</div>
-
-<div class = "container">
-  <table>
-    <tr>
-      <th>Question</th>
-      <th>One</th>
-      <th>Two</th>
-      <th>Three</th>
-      <th>Four</th>
-      <th>Answer</th>
-    </tr>
-    <% for q in @questions %>
-      <tr>
-        <td><%=h q.question %></td>
-        <td><%=h q.one %></td>
-        <td><%=h q.two %></td>
-        <td><%=h q.three %></td>
-        <td><%=h q.four %></td>
-        <td><%=h q.answer %></td>
-        <td><%= link_to 'Show', q %></td>
-        <td><%= link_to 'Destroy', q, :confirm => 'Are you sure?',
-                :method => :delete %></td>
-      </tr>
-    <% end %>
-  </table>
-
-  <% @questions.each do |question| %>
-  <div>
-    <div class="question-question">
-      <h3><%= question.question %></h3>
-    </div>
-    <div class="question-one">
-    <%= question.one %>
-    </div>
-    <div class="question-two">
-    <%= question.two %>
-    </div>
-    <div class="question-three">
-    <%= question.three %>
-    </div>
-    <div class="question-four">
-    <%= question.four %>
-    </div>
-  </div>
-  <% end %>
 </div>

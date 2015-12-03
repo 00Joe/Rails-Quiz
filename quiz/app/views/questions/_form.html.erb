@@ -1,0 +1,50 @@
+<div class = "container">
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <div class="form-group">
+        <%= f.label :question %><br>
+        <%= f.text_field :question, class:'form-control', placeholder: 'Question' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :one %><br>
+        <%= f.text_field :one, class:'form-control', placeholder: 'Answer' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :two %><br>
+        <%= f.text_field :two, class:'form-control', placeholder: 'Answer' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :three %><br>
+        <%= f.text_field :three, class:'form-control', placeholder: 'Answer' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :four %><br>
+        <%= f.text_field :four, class:'form-control', placeholder: 'Answer' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :answer %><br>
+        <%= f.text_field :answer, class:'form-control', placeholder: 'One, Two, Three, ...' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+<% end %>
+</div>

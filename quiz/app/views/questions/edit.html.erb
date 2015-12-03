@@ -1,8 +1,8 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <h1>Editing Question</h1>
 </div>
   <%= render 'form' %>
-  <div class="container">
-  <%= link_to 'Back', questions_path %>
+<div class="container">
+  <%= link_to 'Back', questions_path %> |
   <%= link_to 'Delete', question_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

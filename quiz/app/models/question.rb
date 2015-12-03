@@ -1,3 +1,3 @@
 class Question < ActiveRecord::Base
-  attr_accessor :question, :answer, :one, :two, :three, :four, :Quiz_Num
+  validates_presence_of :question, :one, :two, :three, :four, :answer
 end
