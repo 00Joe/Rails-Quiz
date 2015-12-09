@@ -82,6 +82,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question, :one, :two, :three, :four, :answer)
+      params.require(:question).permit(:question, :one, :two, :three, :four, :answer, :Quiz_Num)
     end
 end

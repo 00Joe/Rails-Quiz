@@ -11,6 +11,7 @@
           <th>C</th>
           <th>D</th>
           <th>Ans</th>
+          <th>Quiz_Num</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -24,6 +25,7 @@
             <td><%= question.three %></td>
             <td><%= question.four %></td>
             <td><%= question.answer %></td>
+            <td><%= question.Quiz_Num %> </td>
             <td>
               <%= link_to 'Edit', edit_question_path(question) %><br>
               <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
